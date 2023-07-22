@@ -1,1 +1,1 @@
-Template for Playwright with GitHub Actions + Docker 
+Template for Playwright with CircleCI
