@@ -1,0 +1,1 @@
+Template for Playwright with GitHub Actions + Docker 

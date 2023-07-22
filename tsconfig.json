@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["es2022", "DOM"],
+    "types": ["node", "@playwright/test"],
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "baseUrl": "./",
+    "paths": {
+      "@pages/*": ["tests/pages/*"],
+      "@fixtures/*": ["fixtures/*"]
+    },
+  }
+}

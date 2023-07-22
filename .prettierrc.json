@@ -1,0 +1,10 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "max_line_length" : 200,
+    "bracketSpacing":true,
+    "arrowParens": "avoid",
+    "parser":"typescript"
+}
