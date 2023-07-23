@@ -3,7 +3,7 @@ jobs:
   playwright:
     docker:
       - image: mcr.microsoft.com/playwright:v1.35.1-jammy
-    resource_class: large # Use a valid resource class here
+    resource_class: small # Use a valid resource class here
     working_directory: ~/repo
     steps:
       - checkout
