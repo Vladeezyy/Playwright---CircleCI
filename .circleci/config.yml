@@ -3,7 +3,6 @@ jobs:
   playwright:
     docker:
       - image: mcr.microsoft.com/playwright:v1.35.1-jammy
-    working_directory: ~/repo
     steps:
       - checkout
       - setup_remote_docker:
