@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Set git creds
+          command: git config --global user.email "arteezysolo@gmail.com" && git config --global user.name "Vladeezy"
+      - run:
           name: Install dependencies
           command: npm ci
       - run:
