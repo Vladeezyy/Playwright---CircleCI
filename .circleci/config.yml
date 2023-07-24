@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   playwright:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.36.0-jammy
+      - image: mcr.microsoft.com/playwright:v1.35.1-jammy
     steps:
       - checkout
       - run:
