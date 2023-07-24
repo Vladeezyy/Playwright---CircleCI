@@ -23,6 +23,8 @@ jobs:
       # Make sure to update this section according to your project setup.
       - store_test_results:
           path: results.xml
+      - store_artifacts:
+          path: /tmp/core_dumps
 workflows:
   build-and-deploy:
     jobs:
