@@ -2,36 +2,19 @@ version: 2.1
 jobs:
   playwright:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.35.1-jammy
+      - image: mcr.microsoft.com/playwright:v1.36.0-jammy
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.8
-      - run:
-          name: Install Node.js and npm
-          command: |
-            curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
       - run:
           name: Install dependencies
           command: npm ci
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Run tests
           command: npx playwright test
-
       # Add the following step to generate HTML reports
       - run:
           name: Generate HTML reports
           command: npx playwright test --reporter=dot,json --output=reports
-
       # Circle CI does not have a built-in GitHub Pages deployment step.
       # However, you can use the "gh-pages" npm package to achieve this.
       # Make sure to update this section according to your project setup.
@@ -42,7 +25,6 @@ jobs:
             npx gh-pages -d ./docs --add
 
 workflows:
-  version: 2
   build-and-deploy:
     jobs:
       - playwright
